@@ -181,6 +181,9 @@ class TFminiI2C:
         return
 
     def setUnit(self, RangeUnit):
+        """
+            Not working in TFmini Plus
+        """
 
         self.RangeUnit = RangeUnit
 
@@ -190,22 +193,3 @@ class TFminiI2C:
 
         self._setRegister(self.RegDistUnit, self.RangeUnit)
         return
-
-
-"""
-Example usage:
-                  
-Sensor0 = TFminiI2C(1, 0x10)
-Sensor1 = TFminiI2C(1, 0x11)
-Sensor2 = TFminiI2C(1, 0x12)
-
-print(Sensor0.readDistance())
-print(Sensor1.readAll())
-print(Sensor2.readAll())
-
-Sensor0.setUnit(0x00) #for mm
-Sensor1.setUnit(0x01) #for cm
-
-Sensor2.setRange(0x05)
-
-"""

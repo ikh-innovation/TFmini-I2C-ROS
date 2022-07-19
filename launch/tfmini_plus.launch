@@ -1,0 +1,7 @@
+<launch>
+    
+    <rosparam file="$(find tfmini_plus_i2c_ros)/config/tfmini_plus_devices.yaml" command="load" />
+    <node name="TFmini_plus_I2C_node" pkg="tfmini_plus_i2c_ros" type="TFmini_plus_I2C_node.py" respawn="true"  output="screen" >
+        
+    </node>
+</launch>
