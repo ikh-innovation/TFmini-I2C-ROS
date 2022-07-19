@@ -1,3 +1,36 @@
+# TFmini_plus_I2C_ROS
+
+This is a repo from madewhatnow and configured for ROS framework.
+> Tested with TFmini-Plus-I2C on Raspberry Pi4. Some functions from the driver are not working for this model.
+
+
+## Install
+```bash
+cd ~/catkin_ws/src
+git clone https://github.com/ikh-innovation/TFmini-I2C-ROS.git
+cd ~/catkin_ws
+catkin_make
+rospack profile
+```
+## Config
+```yaml
+# Set BUS of I2C and device addresses.
+i2cbus: 1
+
+lidars:
+  rear_lidar:
+    device_address: 20
+
+  front_lidar:
+    device_address: 21
+```
+## Run
+```bash
+roslaunch tfmini_plus_i2c_ros tfmini_plus.launch 
+```
+
+> Note: To configure each device with I2C, connect it to the raspberry and run the setAddress() from the TFmini_plus_I2C.py
+
 # Reading the Benewake TFmini-I2C LIDAR Module in Python
 
 The TFmini I2C sensor module is termed a 'LIDAR' module, but really a fast TOF (time of flight) sensor based on a 850nm IR diode. The more common version of the sensor has a serial (UART) interface, but an I2C-only version exists. The TFmini-I2C module can read a distance between 30 cm to 1200 cm at up to 1000hz (standard: 100 Hz). The range and precision depends somewhat on lighting (shorter maximum range in bright sunlight) and reflectivity of the target (shorter maximum range for dark surfaces). 
