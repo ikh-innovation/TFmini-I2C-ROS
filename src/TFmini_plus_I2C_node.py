@@ -50,12 +50,12 @@ class TFmini_ROS(TFminiI2C):
 if __name__ == '__main__':
     try:
         rospy.init_node('TFmini_plus_I2C_node')
-        rate = rospy.Rate(2)
+        rate = rospy.Rate(10)
 
         lidars = []
         bus = rospy.get_param('i2cbus')
 
-        lidars_list = rospy.get_param('lidars')
+        lidars_list = rospy.get_param('lidar_params')
 
         for lidar in lidars_list.keys():
             address = lidars_list[lidar]['device_address']

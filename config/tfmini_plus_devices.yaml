@@ -1,8 +1,0 @@
-i2cbus: 1
-
-lidars:
-  rear_lidar:
-    device_address: 20
-
-  # front_lidar:
-  #   device_address: 21
